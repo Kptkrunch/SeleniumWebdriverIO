@@ -22,7 +22,7 @@
     "wdio-chromedriver-service": "^6.0.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
