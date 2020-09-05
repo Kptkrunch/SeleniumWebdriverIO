@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^5.2.0",
-    "python": "0.0.4",
-    "selenium-standalone": "^6.15.3",
-    "webdriverio": "^4.13.2"
+
+    "mocha": "^5.2.0"
+  },
+  "devDependencies": {
   }
 }
