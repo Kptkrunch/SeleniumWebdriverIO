@@ -1,23 +1,18 @@
 import App from '../page-objects/App.js';
-import Base from '../page-objects/Base.js';
-
+import Feedback from '../page-objects/pages/Feedback.js';
 
 describe('end to end feedback test', () => {
 
-    it('Shoulf laod the feedback form', () => {
+    it('Should load the feedback form', () => {
         App.openHomepage()
-        $('#feedback').waitForExist()
-        $('#feedback').click()
+        Feedback.clickFeedback()
         $('form').waitForExist()
 
     })
 
     it('Should submit feedback form', () => {
-        $('#name').setValue('Name')
-        $('#email').setValue('test@test.com')
-        $('#subject').setValue('Subjects')
-        $('#comment').setValue('Just a simple message')
-        $('input[type="submit"]').click()
+        Feedback.fillForm()
+        Feedback.submitForm()
         expect(browser).toHaveUrl(
             'http://zero.webappsecurity.com/sendFeedback.html'
         )

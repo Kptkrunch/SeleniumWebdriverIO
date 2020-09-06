@@ -1,7 +1,9 @@
 import Base from '../Base.js';
 import App from '../App.js';
+import Navbar from '../components/Navbar.js';
 
 class LoginPage extends Base {
+
     get loginForm() {
         return $('#login_form')
     }
@@ -18,6 +20,22 @@ class LoginPage extends Base {
         return $('input[type="submit"]')
     }
 
+    get iconUser() {
+        return $('.icon-user')
+    }
+
+    get logoutLink() {
+        return $('#logout_link')
+    }
+
+    get error() {
+        return $('.alert-error')
+    }
+
+    startLogin() {
+        Navbar.clickSignIn()
+    }
+
     formIsVisible() {
         this.loginForm.waitForExist()
     }
@@ -29,6 +47,13 @@ class LoginPage extends Base {
 
     submitForm() {
         this.submitButton.click()
+    }
+
+    logoutUser() {
+        this.iconUser.waitForExist()
+        this.iconUser.click()
+        this.logoutLink.waitForExist()
+        this.logoutLink.click()
     }
 }
 

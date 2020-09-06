@@ -27,18 +27,20 @@ class Feedback extends Base {
     }
 
     clickFeedback() {
-        this.feedback().waitForExist()
-        this.feedback().click()
+        this.feedback.waitForExist()
+        this.feedback.click()
     }
 
     fillForm() {
-        this.nameInput().setValue('Name')
-        this.emailInput().setValue('test@test.com')
-        this.subjectInput().setValue('Subjects')
-        this.commentInput().setValue('Just a simple message')
+        this.nameInput.setValue('Name')
+        this.emailInput.setValue('test@test.com')
+        this.subjectInput.setValue('Subjects')
+        this.commentInput.setValue('Just a simple message')
     }
 
     submitForm() {
-        this.submitButton().click()
+        this.submitButton.click()
     }
 }
+
+export default new Feedback;
