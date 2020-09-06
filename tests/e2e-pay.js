@@ -1,0 +1,28 @@
+describe('Should pay a bill', () => {
+    it('should log into application', () => {
+        browser.url('http://zero.webappsecurity.com/index.html')
+        $('#signin_button').waitForExist()
+        $('#signin_button').click()
+        $('#login_form').waitForExist()
+        $('#user_login').setValue('username')
+        $('#user_password').setValue('password')
+        $('input[type="submit"]').click()
+        $('body > div.wrapper > div.container > div > div:nth-child(1) > div > div > ul').waitForExist()
+    })
+    
+    it(',should make a payment', () => {
+        $('#pay_bills_tab').click()
+        const selectPay = $('#sp_payee')
+        selectPay.waitForExist()
+        selectPay.selectByAttribute('value', 'apple')
+        const selectAccount = $('#sp_account')
+        selectAccount.waitForExist()
+        selectAccount.selectByVisibleText('Loan')
+        $('#sp_amount').setValue('500')
+        $('#sp_date').setValue('2020-030-31')
+        $('#sp_description').setValue('Test')
+        $('#pay_saved_payees').click()
+        const message = $('#alert_content')
+        expect(message).toHaveText('The payment was successfully submitted.')
+    })
+})
