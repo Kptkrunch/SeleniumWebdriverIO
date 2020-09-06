@@ -1,5 +1,4 @@
-import {short, medium, long} from '../lib/timeouts';
-import {mobile, tablet, desktop} from '../lib/devices';
+
 
 describe('first steps with webdriverio', () => {
     it('load example site', () => {

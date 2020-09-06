@@ -1,4 +1,6 @@
-import App from '../page-objects/pages/App.js';
+import App from '../page-objects/App.js';
+import Base from '../page-objects/Base.js';
+
 
 describe('end to end feedback test', () => {
 
